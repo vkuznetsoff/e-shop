@@ -1,7 +1,7 @@
-import { ICardItem, ICartItem } from "../types";
+import { IProductCard, ICartItem } from "../types";
 import { CART_ADD_ITEM, CART_CHANGE_COUNT, CART_REMOVE_ITEM } from "./storeTypes";
 
-export const addCartItem = (product: ICardItem, count: number) => {
+export const addCartItem = (product: IProductCard, count: number) => {
     return {
         type: CART_ADD_ITEM,
         payload: {product, count}

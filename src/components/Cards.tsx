@@ -1,8 +1,8 @@
 import { FC } from "react"
-import { ICard } from "../types"
+import {IProduct, IProductCard } from "../types"
 import Card from "./Сard"
 
-const cards: ICard[] = [
+const cards: IProductCard[] = [
     {
         id: '1qq',
         imagePath: 'https://items.s1.citilink.ru/1420753_v01_b.jpg',
@@ -29,7 +29,7 @@ const Cards:FC = () => {
     return (
         <div className='flex flex-wrap items-center '>
             {cards.map(c => (
-               <Card key={c.id} card={c}/>
+               <Card key={c.id} product={c}/>
             ))
             }
         </div>
