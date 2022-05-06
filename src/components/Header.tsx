@@ -8,7 +8,7 @@ import cn from 'classnames'
 import { ICartItem } from '../types'
 
 
-let cartItems: ICartItem[] = [
+let cart: ICartItem[] = [
     {
         id: '1qq',
         imagePath: 'https://items.s1.citilink.ru/1420753_v01_b.jpg',
@@ -23,10 +23,10 @@ const Header: FC = () => {
 
     const [showCart, setShowCart] = useState(false)
 
-    const total = cartItems.reduce((acc, item) => acc + item.price, 0)
+    const total = cart.reduce((acc, item) => acc + item.price, 0)
 
     const removeItem = (id: string) => {
-        cartItems = cartItems.filter(i => i.id !== id)
+        cart = cart.filter(i => i.id !== id)
         console.log(id)
     }
 
@@ -47,7 +47,7 @@ const Header: FC = () => {
                 hidden: !showCart
             })}
                 style={{ top: 'calc(60px + 1.5rem' }}>
-                {cartItems.map(item => (
+                {cart.map(item => (
                     <div key={`card item ${item.name} `} className='flex-col items-center'>
 
                         <img src={item.imagePath} alt={item.name}

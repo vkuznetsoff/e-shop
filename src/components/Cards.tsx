@@ -1,4 +1,6 @@
+import { FC } from "react"
 import { ICard } from "../types"
+import Card from "./Сard"
 
 const cards: ICard[] = [
     {
@@ -23,20 +25,11 @@ const cards: ICard[] = [
     }
 
 ]
-const Cards = () => {
+const Cards:FC = () => {
     return (
-        <div className='flex'>
+        <div className='flex flex-wrap items-center '>
             {cards.map(c => (
-                <div key={c.id} className='flex-wrap m-5 p-2 justify-center items-center border-2'>
-
-                    <img src={c.imagePath} alt={c.name}
-                        width={55} height={55} className='mr-3' />
-
-                    <div className=''>{c.name}</div>
-
-                    <div>{c.price} RUB</div>
-
-                </div>
+               <Card key={c.id} card={c}/>
             ))
             }
         </div>
