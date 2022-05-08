@@ -13,7 +13,12 @@ export interface IProduct {
 
 export interface ICartItem extends IProductCard {
     count: number
+}
 
+export interface ICart {
+    items: ICartItem[]
+    totalSum?: number
+    totalCount?: number
 }
 
 export type TypeSetState<T> = Dispatch<SetStateAction<T>>

@@ -1,8 +1,13 @@
-import { IProduct, IProductCard, ICartItem } from "../types"
+import { IProduct, IProductCard } from "../types"
 
 export const CART_ADD_ITEM = "CART_ADD_ITEM"
 export const CART_REMOVE_ITEM = "CART_REMOVE_ITEM"
 export const CART_CHANGE_COUNT = "CART_CHANGE_COUNT"
+
+export const CART_CHANGE_TOTAL_COUNT = "CART_CHANGE_TOTAL_COUNT"
+export const CART_CHANGE_TOTAL_SUM = "CART_CHANGE_TOTAL_SUM"
+
+
 
 interface ICartChangeCountPayload {
     type: 'plus' | 'minus'
@@ -29,5 +34,21 @@ interface ICartRemoveItem {
     payload: string
  }
 
- export type ActionCartType = ICartAddItem | ICartRemoveItem | ICartChangeCount
+//  interface ICartChangeTotal {
+//     value: number
+// }
+
+ interface ICartChangeTotalSum {
+    type: typeof CART_CHANGE_TOTAL_SUM
+    payload: number
+ }
+
+ interface ICartChangeTotalCount {
+    type: typeof CART_CHANGE_TOTAL_COUNT
+    payload: number
+ }
+
+ export type ActionCartType = ICartAddItem | ICartRemoveItem 
+ | ICartChangeCount | ICartChangeTotalSum
+ | ICartChangeTotalCount
 

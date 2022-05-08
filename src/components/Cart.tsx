@@ -1,23 +1,28 @@
 import { FC } from "react";
 import cn from "classnames";
-import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootStateType } from "../store/rootReducer";
-import { ICartItem } from "../types";
+import { ICart, ICartItem } from "../types";
 
 import removeIcon from '../assets/img/remove.svg'
 import { removeCartItem } from "../store/actions";
 
 
+
 //Компонента Корзины - содержимое корзины
 const Cart: FC<{ showCart: boolean }> = ({ showCart }) => {
-  const cart = useSelector((state: RootStateType) => state.cart);
-  const total = (cart as ICartItem[]).reduce((acc, item) => acc + item.price, 0);
+  const {items} = useSelector( (state: RootStateType):ICart => state.cart);
+  
+  console.log(items)
+ 
+  const totalSum = (items as ICartItem[]).reduce((acc, item) => acc + item.count*item.price, 0);
+  
+  
   const dispatch = useDispatch()
+  
 
   const removeItem = (id: string) => {
-    const updatedCart = (cart as ICartItem[]).filter((i) => i.id !== id);
     dispatch(removeCartItem(id))
-    console.log(id);
   };
   return (
     <div
@@ -26,7 +31,7 @@ const Cart: FC<{ showCart: boolean }> = ({ showCart }) => {
       })}
       style={{ top: "calc(60px + 1.5rem" }}
     >
-      {(cart as ICartItem[]).map((item) => (
+      {(items as ICartItem[]).map((item) => (
         <div key={`card item ${item.name} `} className='flex-col items-center mb-5 border-b-2'>
           <img
             src={item.imagePath}
@@ -53,8 +58,8 @@ const Cart: FC<{ showCart: boolean }> = ({ showCart }) => {
         </div>
       ))}
 
-      {(cart as ICartItem[]).length !== 0 && <div className="text-lg mt-5 mb-2  pt-2">
-             Total: <b>{total} RUB</b>
+      {(items as ICartItem[]).length !== 0 && <div className="text-lg mt-5 mb-2  pt-2">
+             Total: <b>{totalSum} RUB</b>
           </div>
       }
       
