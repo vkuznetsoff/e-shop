@@ -1,25 +1,26 @@
 
-import { idText, isTemplateSpan } from "typescript"
 import { ICart } from "../types"
 import { ActionCartType, CART_ADD_ITEM, CART_CHANGE_TOTAL_COUNT, CART_CHANGE_TOTAL_SUM, CART_REMOVE_ITEM } from "./storeTypes"
 
 
 const initialState: ICart = {
-  items: [{
-    id: '1qq',
-    imagePath: 'https://items.s1.citilink.ru/1420753_v01_b.jpg',
-    name: 'Квадрокоптер DJI Mini 2',
-    count: 1,
-    price: 10
-  },
-  {
-    id: '2qq',
-    imagePath: 'https://items.s1.citilink.ru/1650268_v01_b.jpg',
-    name: 'Смарт-часы Xiaomi Haylou LS05',
-    price: 20,
-    count: 1
-  }
-  ],
+  // items: [{
+  //   id: '1qq',
+  //   imagePath: 'https://items.s1.citilink.ru/1420753_v01_b.jpg',
+  //   name: 'Квадрокоптер DJI Mini 2',
+  //   count: 1,
+  //   price: 10
+  // },
+  // {
+  //   id: '2qq',
+  //   imagePath: 'https://items.s1.citilink.ru/1650268_v01_b.jpg',
+  //   name: 'Смарт-часы Xiaomi Haylou LS05',
+  //   price: 20,
+  //   count: 1
+  // }
+  // ],
+
+  items: [],
 
   totalSum: 0,
   totalCount: 0

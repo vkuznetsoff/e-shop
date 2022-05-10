@@ -12,10 +12,8 @@ import { removeCartItem } from "../store/actions";
 //Компонента Корзины - содержимое корзины
 const Cart: FC<{ showCart: boolean }> = ({ showCart }) => {
   const {items} = useSelector( (state: RootStateType):ICart => state.cart);
-  
-  console.log(items)
  
-  const totalSum = (items as ICartItem[]).reduce((acc, item) => acc + item.count*item.price, 0);
+  const totalSum = (items as ICartItem[]).reduce((acc, item) => acc + item.count*(Number(item.price)), 0);
   
   
   const dispatch = useDispatch()
@@ -32,16 +30,16 @@ const Cart: FC<{ showCart: boolean }> = ({ showCart }) => {
       style={{ top: "calc(60px + 1.5rem" }}
     >
       {(items as ICartItem[]).map((item) => (
-        <div key={`card item ${item.name} `} className='flex-col items-center mb-5 border-b-2'>
+        <div key={`card item ${item.title} `} className='flex-col items-center mb-5 border-b-2'>
           <img
-            src={item.imagePath}
-            alt={item.name}
+            src={item.image}
+            alt={item.title}
             width={55}
             height={55}
             className="mr-3"
           />
 
-          <div className="">{item.name}</div>
+          <div className="">{item.title}</div>
 
           <div>
             {item.count} x {item.price} RUB

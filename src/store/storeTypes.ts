@@ -1,4 +1,4 @@
-import { IProduct, IProductCard } from "../types"
+import { ISingleCard, ISingleProduct } from "../types"
 
 export const CART_ADD_ITEM = "CART_ADD_ITEM"
 export const CART_REMOVE_ITEM = "CART_REMOVE_ITEM"
@@ -11,7 +11,7 @@ export const CART_CHANGE_TOTAL_SUM = "CART_CHANGE_TOTAL_SUM"
 
 interface ICartChangeCountPayload {
     type: 'plus' | 'minus'
-    product: IProduct
+    product: ISingleProduct
 }
 
 interface ICartChangeCount {
@@ -20,7 +20,7 @@ interface ICartChangeCount {
 }
 
 interface ICartAddItemPayload {
-    product: IProductCard
+    product: ISingleProduct
     count: number
 }
 

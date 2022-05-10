@@ -7,8 +7,11 @@ import store from "./store/store";
 function App() {
   return (
     <Provider store={store}>
-      <Header />
+      <div className="bg-slate-400">
+        <Header />
       <Cards />
+      </div>
+      
     </Provider>
 
   );
