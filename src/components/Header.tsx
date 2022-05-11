@@ -5,7 +5,7 @@ import cartIcon from '../assets/img/cart.svg'
 
 import Cart from './Cart'
 
-import axios from "axios";
+
 
 
 const Header: FC = () => {

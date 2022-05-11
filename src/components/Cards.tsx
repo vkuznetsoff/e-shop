@@ -2,6 +2,7 @@ import { FC, useEffect, useState } from "react"
 import { productsAPI } from "../api/api"
 import { ISingleProduct } from "../types"
 import Card from "./Сard"
+import "./Card.css"
 
 // const cards: IProductCard[] = [
 //     {
@@ -29,14 +30,14 @@ import Card from "./Сard"
 
 
 
-const Cards:FC = () => {
+const Cards: FC = () => {
     const [cards, setCards] = useState([])
 
     useEffect(() => {
-         productsAPI.getProducts().then((result:any) => setCards(result))
-        
-        
-    console.log('cards: ',cards)
+        productsAPI.getProducts().then((result: any) => setCards(result))
+
+
+        console.log('cards: ', cards)
     }, [cards])
 
     // const cards = productsAPI.getProducts()
@@ -44,12 +45,23 @@ const Cards:FC = () => {
     // console.log(cards)
 
     return (
-        <div className='flex flex-wrap items-center '>
+        <div className="cards_container">
             {(cards as ISingleProduct[]).map(c => (
-               <Card key={c.id} product={c}/>
-            ))
-            }
+                    <Card key={c.id} product={c} />
+                ))
+                }
         </div>
+
+        // <div className="catalog__row">
+        //     <div className="catalog__col">
+
+                
+         
+//         </div>
+// </div >
+        
+
+        
     )
 }
 
