@@ -36,8 +36,6 @@ const Cards: FC = () => {
     useEffect(() => {
         productsAPI.getProducts().then((result: any) => setCards(result))
 
-
-        console.log('cards: ', cards)
     }, [cards])
 
     // const cards = productsAPI.getProducts()

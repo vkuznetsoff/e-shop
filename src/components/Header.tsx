@@ -15,11 +15,7 @@ const Header: FC = () => {
    
     const [showCart, setShowCart] = useState(false)
     const totalCountInit = useSelector((state: RootStateType):number | undefined => state.cart.totalCount);
-    
-    const [cartCount, setCartCount] = useState(totalCountInit)
-
-
- 
+     
     return (
         <div className='flex items-center justify-between relative px-40 py-3'
             style={{ background: 'linear-gradient(315deg, #e7eff9 0%, #cfd6e6 74%)' }} >
@@ -32,8 +28,7 @@ const Header: FC = () => {
             </button>
             <div className='cart__quantity'>{totalCountInit}</div>
 
-            <Cart showCart={showCart} />
-
+            <Cart showCart={showCart} setShowCart={setShowCart} />
 
         </div>
     )
