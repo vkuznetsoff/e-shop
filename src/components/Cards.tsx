@@ -11,10 +11,6 @@ const Cards: FC = () => {
     productsAPI.getProducts().then((result: any) => setCards(result));
   }, [cards]);
 
-  // const cards = productsAPI.getProducts()
-  // console.log('cards: ',cards)
-  // console.log(cards)
-
   return (
     <div className="container">
       <div className="cards_container">
