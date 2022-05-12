@@ -5,23 +5,24 @@ import { RootStateType } from "../store/rootReducer";
 import { ICart, ICartItem } from "../types";
 
 import removeIcon from '../assets/img/remove.svg'
-import { removeCartItem } from "../store/actions";
-
+import { changeCartTotalCount, removeCartItem } from "../store/actions";
+import { CalcTotalSum } from "../store/utils/utils";
 
 
 //Компонента Корзины - содержимое корзины
 const Cart: FC<{ showCart: boolean }> = ({ showCart }) => {
-  const {items} = useSelector( (state: RootStateType):ICart => state.cart);
- 
-  const totalSum = (items as ICartItem[]).reduce((acc, item) => acc + item.count*(Number(item.price)), 0);
-  
+
+  const {items, totalCount} = useSelector( (state: RootStateType) => state.cart);
+   
+  const totalSum = CalcTotalSum(items)
   
   const dispatch = useDispatch()
   
-
-  const removeItem = (id: string) => {
-    dispatch(removeCartItem(id))
+  const removeItem = (item: ICartItem) => {
+    dispatch(removeCartItem(item.id))
+    dispatch(changeCartTotalCount(Number(totalCount)-item.count))
   };
+
   return (
     <div
       className={cn("absolute right-5 shadow-md p-5 bg-white", {
@@ -29,6 +30,7 @@ const Cart: FC<{ showCart: boolean }> = ({ showCart }) => {
       })}
       style={{ top: "calc(60px + 1.5rem" }}
     >
+      {(items.length === 0) && <div>Корзина пуста</div> }
       {(items as ICartItem[]).map((item) => (
         <div key={`card item ${item.title} `} className='flex-col items-center mb-5 border-b-2'>
           <img
@@ -46,7 +48,7 @@ const Cart: FC<{ showCart: boolean }> = ({ showCart }) => {
           </div>
           <div
             className="text-red-600 cursor-pointer flex"
-            onClick={() => removeItem(item.id)}
+            onClick={() => removeItem(item)}
           >
             <img src={removeIcon} alt="remove" />
             Удалить

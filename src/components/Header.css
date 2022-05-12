@@ -1,0 +1,20 @@
+.cart__quantity {
+    position: absolute;
+    right: 140px;
+    top: 15px;
+    background-color: grey;
+    color: white;
+    /* background-color: #62DA97; */
+    padding: 1px 8px;
+    align-content: center;
+    border-radius: 100%;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 10pt;
+    
+   
+    
+    
+    
+
+}

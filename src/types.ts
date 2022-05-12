@@ -28,8 +28,8 @@ export interface ICartItem extends ISingleProduct {
 
 export interface ICart {
     items: ICartItem[]
-    totalSum?: number
-    totalCount?: number
+    totalSum?: number | undefined
+    totalCount?: number | undefined
 }
 
 export interface ISingleProduct   {
