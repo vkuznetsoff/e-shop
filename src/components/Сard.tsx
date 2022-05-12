@@ -10,10 +10,6 @@ import { CalcTotalCount } from "../store/utils/utils";
 const Card: FC<ISingleCard> = ({ product }) => {
   const dispatch = useDispatch();
   const {items, totalCount} = useSelector( (state: RootStateType) => state.cart);
-  // const totalCount = CalcTotalCount(items)
-
-  // const totalCountInit = useSelector((state: RootStateType):number | undefined => state.cart.totalCount);
-
   const [count, setCount] = useState(0);
 
   const addHandler = (product: ISingleProduct, count: number) => {
