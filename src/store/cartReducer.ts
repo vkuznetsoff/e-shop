@@ -57,6 +57,7 @@ export const cartReducer = (state = initialState, action: ActionCartType) => {
     }
 
     case CART_CHANGE_TOTAL_SUM: {
+      debugger
       return {...state, totalSum: action.payload}
     }
 

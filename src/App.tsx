@@ -5,8 +5,11 @@ import Header from "./components/Header";
 import store from "./store/store";
 
 import "./App.css";
+import { useState } from "react";
 
 function App() {
+  // const [isLoadingCards, setIsLoadingCards] = useState(false)
+
   return (
     <Provider store={store}>
       <div className="app">

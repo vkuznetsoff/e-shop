@@ -1,6 +1,7 @@
 import { ICartItem } from "../../types"
 
 export const CalcTotalSum = (arr: ICartItem[]) => {
+  debugger
     return arr.reduce((acc, item) => acc + item.count*(Number(item.price)), 0)
   }
 

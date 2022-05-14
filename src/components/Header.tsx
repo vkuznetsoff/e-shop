@@ -7,23 +7,31 @@ import Cart from "./Cart";
 import "./Header.css";
 import { RootStateType } from "../store/rootReducer";
 import { useSelector } from "react-redux";
+import { CalcTotalSum } from "../store/utils/utils";
 
 const Header: FC = () => {
   const [showCart, setShowCart] = useState(false);
-  const totalCountInit = useSelector(
-    (state: RootStateType): number | undefined => state.cart.totalCount
+  const { items, totalCount} = useSelector(
+    (state: RootStateType) => state.cart
   );
+  const totalSum = CalcTotalSum(items)
 
   return (
     <div className="header">
       <div className="header__logo">
         <img src={logoImg} alt="logo" width={250} />
       </div>
+
       <div className="header__cart">
-        <button onClick={() => setShowCart(!showCart)}>
+        <button
+          className="header__cart__button"
+          onClick={() => setShowCart(!showCart)}
+        >
           <img src={cartIcon} alt="cart" />
+          <div className="header__cart__quantity">{totalCount}</div>
         </button>
-        <div className="header__cart__quantity">{totalCountInit}</div>
+
+        {totalSum !==0 && <div className="header__cart__sum">{totalSum}$</div>}
       </div>
 
       <Cart showCart={showCart} setShowCart={setShowCart} />

@@ -1,15 +1,15 @@
 import { FC, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addCartItem, changeCartTotalCount } from "../store/actions";
+import { addCartItem, changeCartTotalCount, changeCartTotalSum } from "../store/actions";
 import { ISingleCard, ISingleProduct } from "../types";
 import Quantity from "./Quantity";
 import "./Card.css"
 import { RootStateType } from "../store/rootReducer";
-import { CalcTotalCount } from "../store/utils/utils";
+import { CalcTotalCount, CalcTotalSum } from "../store/utils/utils";
 
 const Card: FC<ISingleCard> = ({ product }) => {
   const dispatch = useDispatch();
-  const {items, totalCount} = useSelector( (state: RootStateType) => state.cart);
+  const {totalCount} = useSelector( (state: RootStateType) => state.cart);
   const [count, setCount] = useState(0);
 
   const addHandler = (product: ISingleProduct, count: number) => {
