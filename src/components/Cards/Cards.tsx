@@ -1,9 +1,9 @@
 import { FC, useEffect, useState } from "react";
-import { productsAPI } from "../api/api";
-import { ISingleProduct } from "../types";
-import Card from "./Сard";
-import "./Card.css";
-import Preloader from "./Preloader";
+import { productsAPI } from "../../api/api";
+import { ISingleProduct } from "../../types";
+import Card from "../Card/Сard";
+import Preloader from "../Preloader/Preloader";
+import s from "./Cards.module.css";
 
 const Cards: FC = () => {
   const [cards, setCards] = useState([]);
@@ -13,8 +13,8 @@ const Cards: FC = () => {
   }, [cards]);
 
   return (
-    <div className="container">
-      <div className="cards_container">
+    <div className={s.container}>
+      <div className={s.cards_container}>
        { cards.length === 0 && <Preloader /> }
         {(cards as ISingleProduct[]).map((c) => (
           <Card key={c.id} product={c} />

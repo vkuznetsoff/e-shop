@@ -1,11 +1,10 @@
 import { Provider } from "react-redux";
-import Cards from "./components/Cards";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
+import Cards from "./components/Cards/Cards";
+import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
 import store from "./store/store";
 
 import "./App.css";
-import { useState } from "react";
 
 function App() {
   // const [isLoadingCards, setIsLoadingCards] = useState(false)

@@ -1,6 +1,3 @@
-
-
-
 export const productsAPI: any = {
     getProducts: async () => {
         const data = await fetch('https://fakestoreapi.com/products')

@@ -1,12 +1,12 @@
-import "./Footer.css";
+import s from "./Footer.module.css";
 
 import { FC } from "react";
 
 const Footer: FC = () => {
   return (
-    <div className="footer">
-      <div className="footer__block">
-        <div className="footer__item">
+    <div className={s.footer}>
+      <div className={s.footer__block}>
+        <div className={s.footer__item}>
           Vyacheslav Kuznetsov ©️ 2022 год</div>
       </div>
     </div>
