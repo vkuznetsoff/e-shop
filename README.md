@@ -1,11 +1,18 @@
 # SPA on React for internet market
-![alt-текст](https://drive.google.com/file/d/19P7874J-3fbZQU6rxIhfxNDQYdDTLLCE/view?usp=sharing "Текст заголовка логотипа 1")
+<img src="https://i.postimg.cc/ncnWBQCk/e-shop-screen.gif" width="450">
 
 
 
-## Available Scripts
+## Run
 
-In the project directory, you can run:
+```
+git clone https://github.com/vkuznetsoff/e-shop.git
+npm i
+npm run build
+```
+
+## Preview demo
+<https://vkuznetsoff.github.io/e-shop/>
 
 ### `npm start`
 
