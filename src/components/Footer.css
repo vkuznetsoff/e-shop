@@ -6,6 +6,11 @@
 }
 
 .footer__block {
+   
+}
+
+.footer__item {
     padding: 20px;
-    
+    font-weight: 500;
+    color: #ffffff; 
 }

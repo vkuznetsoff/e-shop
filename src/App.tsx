@@ -14,9 +14,11 @@ function App() {
     <Provider store={store}>
       <div className="app">
         <div className="app__opacity">
-          <Header />
-          <Cards />
-          <Footer />
+          <div className="container">
+            <Header />
+            <Cards />
+            <Footer />
+          </div>
         </div>
       </div>
     </Provider>

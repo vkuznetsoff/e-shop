@@ -1,5 +1,6 @@
 .container {
     margin-bottom: 35px; 
+    justify-content: center;
     
 }
 
@@ -8,7 +9,6 @@
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    
     justify-content: center; 
    
     

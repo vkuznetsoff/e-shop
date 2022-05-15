@@ -15,7 +15,7 @@ const Cart: FC<{ showCart: boolean, setShowCart: Function }> = ({ showCart, setS
 
   const {items, totalCount} = useSelector( (state: RootStateType) => state.cart);
    
-  const totalSum = CalcTotalSum(items)
+  const totalSum = Number(CalcTotalSum(items).toFixed(2));
   
   const dispatch = useDispatch()
   
@@ -74,7 +74,7 @@ const Cart: FC<{ showCart: boolean, setShowCart: Function }> = ({ showCart, setS
       ))}
 
       {items.length !== 0 && <div className="cart__bottom">
-             Итого: <b>{totalSum} RUB</b>
+             Итого: <b>{totalSum} 💲</b>
           </div>
       }
       
