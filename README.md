@@ -1,5 +1,5 @@
 # SPA on React for internet market
-<img src="https://goo.su/WW2Skrd" />
+![alt-текст](https://drive.google.com/file/d/19P7874J-3fbZQU6rxIhfxNDQYdDTLLCE/view?usp=sharing "Текст заголовка логотипа 1")
 
 
 
