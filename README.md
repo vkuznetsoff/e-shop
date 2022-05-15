@@ -1,4 +1,5 @@
 # SPA on React for internet market
+<img src="https://goo.su/WW2Skrd" />
 
 
 
