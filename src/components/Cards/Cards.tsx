@@ -10,7 +10,7 @@ const Cards: FC = () => {
 
   useEffect(() => {
     productsAPI.getProducts().then((result: any) => setCards(result));
-  }, [cards]);
+  }, []);
 
   return (
     <div className={s.container}>
